@@ -1,0 +1,22 @@
+@mixin SHADOW($x, $y, $blur, $sprade, $color) {
+    -webkit-box-shadow: $x $y $blur $sprade $color;
+    -moz-box-shadow: $x $y $blur $sprade $color;
+    box-shadow: $x $y $blur $sprade $color;
+}
+
+@mixin ROUNDED($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin STROKE($color: var(--primaryTX), $size: 1px) {
+    text-shadow: -#{$size} -#{$size} 0 $color,
+    0 -#{$size} 0 $color,
+    #{$size} -#{$size} 0 $color,
+    #{$size} 0 0 $color,
+    #{$size} #{$size} 0 $color,
+    0 #{$size} 0 $color,
+    -#{$size} #{$size} 0 $color,
+    -#{$size} 0 0 $color;
+}
