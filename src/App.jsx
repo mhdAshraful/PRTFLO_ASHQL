@@ -3,7 +3,7 @@ import FontFaceObserver from 'fontfaceobserver';
 import { useEffect, useState, useRef, memo } from 'react';
 import { Canvas } from '@react-three/fiber'
 import { Route, Routes } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
+
 import { Bloom, EffectComposer } from '@react-three/postprocessing'
 //components
 import Home from './pages/Home';
@@ -67,31 +67,14 @@ function App() {
     }, [width])
 
 
-    const loadingStyle = {
-        position: 'fixed',
-        top: '50%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '16px',
-    };
 
     const progressRef = useRef(null);
 
     return (
         Loading ?
-
-            <div style={loadingStyle}>
-                <div className="spinner" />
-                <h2>Loading data</h2>
-                <p ref={progressRef}>{Progress}%</p>
-            </div>
-
+            <Load />
             :
             <div className="App" id='home'>
-                {/* <ScrollToTop /> */}
                 <Header width={width} />
                 <Routes>
                     <Route path='/' index element={<Home />} />
@@ -115,5 +98,25 @@ function App() {
             </div>
     )
 }
+
+function Load({ children }) {
+    return (
+        <div>
+            <h1
+                style={{
+                    position: 'absolute',
+                    top: "50%",
+                    left: "50%",
+                    transform: "translateX( -50%)",
+                    transition: "all 1s easeIn"
+                }}>🌀 Loading...</h1>
+            {children}
+        </div>
+    )
+}
+
+
+
+
 
 export default memo(App);
