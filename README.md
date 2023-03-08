@@ -8,7 +8,7 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Ashraf0011/PRTFLO_ASHQL/issues)
+[![GitHub Issues](https://github.com/Ashraf0011/PRTFLO_ASHQL/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Ashraf0011/PRTFLO_ASHQL/issues)
 [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/Ashraf0011/PRTFLO_ASHQL/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
