@@ -1,0 +1,40 @@
+.btns-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  .btn {
+    position: relative;
+    font-family: "Stardom", sans-serif;
+    font-size: 2rem;
+    overflow: hidden;
+    z-index: 10;
+    a {
+      text-decoration: none;
+    }
+
+    #bottom-texts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #000000;
+      font-size: 2rem;
+    }
+    #bottom-line {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: brown;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.btn-top-text {
+  text-decoration: none;
+  overflow: hidden;
+  color: #000000;
+}

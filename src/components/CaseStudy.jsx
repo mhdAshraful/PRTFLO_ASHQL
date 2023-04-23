@@ -20,7 +20,7 @@ const CaseStudy = () => {
                     cases.map((item, index) =>
                         <div className='card_container' key={`${item.id}`}>
                             <div className="case_img">
-                                <img src={`assets/${item.gallery.pictures.main} `} alt={item.name} />
+                                <img src={`./assets/${item.gallery.pictures.main} `} alt={item.name} />
                             </div>
                             <div className="numbers">
                                 <h3>0{index + 1}/0{totalCase}</h3>

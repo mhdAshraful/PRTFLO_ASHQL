@@ -1,30 +1,57 @@
 import React from 'react'
 
-const SlideBanner = () => {
+const Banner = () => {
     return (
         <div className="banner">
-            <div className="banner_1">
-                <div className="message_wrapper">
-                    <div className="message">
-                        <h1>- Let's go, I am dedicated to bringing your vision to reality</h1>
-                    </div>
-                    <div className="message">
-                        <h1>- Let's go, I am dedicated to bringing your vision to reality</h1>
-                    </div>
+            <div className="message_wrapper">
+                <div className="message">
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Empathise With user</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Accessible UI</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">User Control Design</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">User Need</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Success Matrics</div>
+                    </li>
                 </div>
-            </div>
-            <div className="banner_2">
-                <div className="message_wrapper">
-                    <div className="message">
-                        <h1 className=" outlined_text_1">Website - Mobile Apps - Dashboard - Problem Solving - Website - Mobile Apps - Dashboard - Problem Solving -</h1>
-                    </div>
-                    <div className="message">
-                        <h1 className=" outlined_text_2">Website - Mobile Apps - Dashboard - Problem Solving - Website - Mobile Apps - Dashboard - Problem Solving -</h1>
-                    </div>
+                <div className="message">
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Empathise With user</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Accessible UI</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">User Control Design</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">User Need</div>
+                    </li>
+                    <li className="service-list">
+                        <img src="./assets/images/iconstar.svg" alt="icon-stars" />
+                        <div className="text">Success Matrics</div>
+                    </li>
                 </div>
             </div>
         </div>
+
     )
 }
 
-export default SlideBanner
+export default Banner

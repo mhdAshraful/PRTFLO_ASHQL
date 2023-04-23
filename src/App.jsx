@@ -1,10 +1,10 @@
 import './SASS/index.scss'
 import FontFaceObserver from 'fontfaceobserver';
 import { useEffect, useState, useRef, memo } from 'react';
-import { Canvas } from '@react-three/fiber'
+// import { Canvas } from '@react-three/fiber'
 import { Route, Routes } from 'react-router-dom';
 
-import { Bloom, EffectComposer } from '@react-three/postprocessing'
+// import { Bloom, EffectComposer } from '@react-three/postprocessing'
 //components
 import Home from './pages/Home';
 import CaseDetails from './components/CaseDetails';
@@ -84,17 +84,7 @@ function App() {
                     <Route path='/dashDetails/:id' element={<CaseDetails />} />
                     <Route path='/about' element={<AboutMe />} />
                 </Routes>
-                <Canvas style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0, zIndex: -1 }}>
-                    <EffectComposer>
-                        <Bloom mipmapBlur intensity={2} />
-                    </EffectComposer>
 
-                    {/* <pointLight position={[10, 10, 10]} /> */}
-                    <mesh>
-                        <sphereGeometry />
-                        <meshStandardMaterial color="hotpink" emissive="hotpink" />
-                    </mesh>
-                </Canvas>
             </div>
     )
 }
@@ -120,3 +110,17 @@ function Load({ children }) {
 
 
 export default memo(App);
+
+
+
+/**
+ <Canvas style={{ width: "100vw", height: "100vh", position: "fixed", top: 0, left: 0, zIndex: -1 }}>
+                    <EffectComposer>
+                        <Bloom mipmapBlur intensity={2} />
+                    </EffectComposer>
+                    <mesh>
+                        <sphereGeometry />
+                        <meshStandardMaterial color="hotpink" emissive="hotpink" />
+                    </mesh>
+                </Canvas>
+ */

@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, NavLink, Navigate } from 'react-router-dom';
-import CaseStudy from './CaseStudy';
-import RecentWorks from './RecentWorks';
-
+import { Link, NavLink } from 'react-router-dom';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import gsap from 'gsap';
+gsap.registerPlugin(ScrollToPlugin);
 
 
 
@@ -11,6 +10,7 @@ const NavBar = ({ width }) => {
 
     let [show, setShow] = useState(false);
     let navBtnref = useRef()
+
     useEffect(() => {
         const outside = (e) => {
             if (!navBtnref.current.contains(e.target)) {
@@ -20,14 +20,31 @@ const NavBar = ({ width }) => {
         document.body.addEventListener('click', outside)
         return () => document.body.removeEventListener('click', outside)
     }, [navBtnref])
-    console.log("setShow is:", show);
+
+
+
+    const bringInView = (position) => {
+        gsap.to(window, {
+            duration: 1.5,
+            scrollTo: {
+                y: position,
+                offsetY: 92
+            },
+            ease: "expo.inOut",
+        })
+    }
+
+
+
 
 
     return (
         width <= 1199 ?
             <>
                 <div className="nav_container">
-                    <div className="logo">iQ</div>
+                    <div className="logo">
+                        <img src='/assets/images/logo.svg' alt='logo' />
+                    </div>
                     <div ref={navBtnref} onClick={() => setShow(show => !show)} className="hamburger">
                         <span></span>
                     </div>
@@ -35,8 +52,11 @@ const NavBar = ({ width }) => {
 
                 {show ?
                     <div className='mobileNavView '>
+                        {/* mobileMenuBar */}
                         <div className="mobiletop">
-                            <div className="log">LOGO</div>
+                            <div className="logo">
+                                <img src='/assets/images/logo.svg' alt='logo' />
+                            </div>
                             <div onClick={() => setShow(false)} className="cross">
                                 <img src="/assets/images/cross.svg" alt="cross icon" />
                             </div>
@@ -50,14 +70,13 @@ const NavBar = ({ width }) => {
                                         }}>Home</Link>
                                     </li>
                                     <li className="link">
-                                        <p onClick={() => {
-                                            gsap.to(window, { duration: 1, scrollTo: "#case_study", ease: "easeIn" })
-                                        }}>Case Study</p>
+                                        {/* <Link onClick={() => {
+                                            gsap.to(window, { duration: 1, scrollTo: { y: "#case_study" }, ease: "easeIn" })
+                                        }}>Case Study</Link> */}
+                                        <Link onClick={() => bringInView("#case_study")}>Case Study</Link>
                                     </li>
                                     <li className="link"  >
-                                        <p onClick={() => {
-                                            gsap.to(window, { duration: 1, scrollTo: "#recent_work", ease: "easeIn" })
-                                        }}>Recent Works</p>
+                                        <Link onClick={() => bringInView("#recent_work")}>Recent Works</Link>
                                     </li>
                                     <li className="link">
                                         <NavLink to={"/about"}>About Me</NavLink>
@@ -71,14 +90,16 @@ const NavBar = ({ width }) => {
             :
             <>
                 <div ref={navBtnref} className="nav_container">
-                    <div className="logo">logo</div>
+                    <div className="logo">
+                        <img src='/assets/images/logo.svg' alt='logo' />
+                    </div>
                     <div className="nav_desktop">
                         <div className="links">
                             <ul>
-                                <li className="link"><NavLink>Home</NavLink></li>
-                                <li className="link"><NavLink>Case study</NavLink></li>
-                                <li className="link"><NavLink>Recent Work</NavLink></li>
-                                <li className="link"><NavLink>About me</NavLink></li>
+                                <li className="link"><NavLink to={"/"} onClick={() => bringInView("#home")}>Home</NavLink></li>
+                                <li className="link"><NavLink onClick={() => bringInView("#case_study")}>Case study</NavLink></li>
+                                <li className="link"><NavLink onClick={() => bringInView("#recent_work")}>Recent Work</NavLink></li>
+                                <li className="link"><NavLink to={"/about"}>About me</NavLink></li>
                             </ul>
                         </div>
                     </div>
