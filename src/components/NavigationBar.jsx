@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import gsap from 'gsap';
 import Hoverbutton from './Hoverbutton';
-import Footer from './Footer';
+import Footer, { Mailto } from './Footer';
 import useNavScrollController from '../hooks/useNavScrollController';
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -144,7 +144,10 @@ const NavigationBar = ({ width }) => {
           /** desktop view */
           <>
             <div ref={navBtnref} className="nav_container">
-              <div className="logo">
+              <div className="logo" onClick={() => {
+                navigate("/")
+                bringInView("#home",)
+              }}>
                 <img src='/assets/images/logo.svg' alt='logo' />
               </div>
               <div className="nav_desktop">
@@ -212,8 +215,10 @@ const NavigationBar = ({ width }) => {
 
                 </div>
               </div>
-
-              <div className="email">Let's Talk</div>
+              <Mailto className="email" email="mdashiquli4@gmail.com" subject='New Design Project!!' body='Hi, Ashiq, I would like to discuss about my next Interesting Project. Please contact me with the details below, and here is an overview of the project:'>
+                Let's Talk
+              </Mailto>
+              {/* <div className="email">Let's Talk</div> */}
             </div>
           </>
       }

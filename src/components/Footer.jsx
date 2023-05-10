@@ -23,13 +23,34 @@ const social = [
   }
 ]
 
+
+export const Mailto = ({ email, subject = '', body = '', children }) => {
+  let params = subject || body ? '?' : '';
+  if (subject) params += `subject=${encodeURIComponent(subject)}`;
+  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+  return <a href={`mailto:${email}${params}`}>{children}</a>;
+};
+
+
+
+
+
 const Footer = () => {
+
+
+
+
+
+
 
   return (
     <div className="footer_container">
       <div className="email_me">
 
-        <a>Let's Talk</a>
+        <Mailto email="mdashiquli4@gmail.com" subject='New Design Project!!' body='Hi, Ashiq, I would like to discuss about my next Interesting Project. Please contact me with the details below, and here is an overview of the project:'>
+          Let's Talk
+        </Mailto>
 
         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M17.083 18.4133H2.91634" stroke="#292D32" strokeWidth="1.8" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
