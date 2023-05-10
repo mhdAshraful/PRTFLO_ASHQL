@@ -5,10 +5,14 @@
 
   .btn {
     position: relative;
-    font-family: "Stardom", sans-serif;
+    font-family: "Clash Display", sans-serif;
     font-size: 2rem;
+    font-weight: 600;
     overflow: hidden;
     z-index: 10;
+    &.active .char {
+      color: var(--overlineTXorAcent);
+    }
     a {
       text-decoration: none;
     }
@@ -31,10 +35,25 @@
       cursor: pointer;
     }
   }
+
+  @include DESKTOP {
+    .btn {
+      position: relative;
+      font: 400 1rem "Clash Display", sans-serif;
+
+      #bottom-texts {
+        font: 400 1rem "Clash Display", sans-serif;
+      }
+    }
+  }
 }
 
 .btn-top-text {
   text-decoration: none;
   overflow: hidden;
   color: #000000;
+}
+
+.email {
+  font: 600 1.125rem/1.6 "Clash Display", sans-serif;
 }

@@ -9,20 +9,20 @@ import Workprocess from '../components/Workprocess'
 
 
 const Home = () => {
-
-
-    return (
-        <>
-            <main className="main_content_container">
-                <Titletext name="topTitle" title="Creating meaningful user experiences through product design" />
-                <SlideBanner className="ban" />
-                <CaseStudy />
-                <Workprocess />
-                <RecentWorks />
-            </main>
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <main className="main_content_container">
+        <div data-section id='home' className="section">
+          <Titletext name="topTitle" title="Creating meaningful user experiences through product design" />
+          <SlideBanner className="ban" />
+          <CaseStudy />
+          <Workprocess />
+          <RecentWorks />
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
 }
 
 export default Home

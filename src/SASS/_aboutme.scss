@@ -1,0 +1,160 @@
+.about_wrapper {
+  width: 100vw;
+  padding: 0 1.125rem;
+  // height: 100vh;
+  position: relative;
+
+  .section-hero {
+    margin: 18.8rem auto 0 auto;
+    overflow: hidden;
+  }
+  .hero_heading {
+    padding-bottom: 2rem;
+  }
+  a {
+    // margin: 2.5rem 0;
+    // font-size: 1.125rem;
+    text-decoration: none;
+  }
+  a.underlay {
+    margin: 2.5rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--primaryTX);
+  }
+  .about_content {
+    margin: 4rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+
+    .page-names {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1.5rem;
+      padding: 0;
+      border: 0;
+    }
+
+    .inner {
+      .heading {
+        font-family: "Outfit", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .details {
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 1.15rem auto;
+      }
+
+      .info {
+        margin: 0.5rem 0 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .topLine {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          gap: 0.7rem;
+          margin: 0.5rem auto;
+          h3 {
+            font-family: "Outfit", sans-serif;
+            font-size: 1.125rem;
+            font-weight: 500;
+            padding-right: 0.7rem;
+            border-right: 2px solid var(--lineOrBars);
+            line-height: 1rem;
+          }
+          a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: var(--overlineTXorAcent);
+
+            &:visited,
+            &:active {
+              text-decoration: none;
+            }
+          }
+        }
+        .bottomline {
+          display: flex;
+          flex-direction: row;
+          align-items: baseline;
+          gap: 0.5rem;
+          p {
+            font-family: "Outfit", sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: gray;
+
+            &:nth-child(1) {
+              padding-right: 0.5rem;
+              border-right: 2px solid gray;
+              line-height: 0.8rem;
+            }
+            &:nth-child(2) {
+              padding-right: 0.5rem;
+              border-right: 2px solid gray;
+              line-height: 0.8rem;
+            }
+          }
+        }
+        .description {
+          margin: 1rem 0 auto;
+          color: hsla(0, 0%, 31%, 1);
+        }
+      }
+    }
+  }
+
+  @include TABLET {
+    padding: 0 2.25rem;
+    .section-hero {
+      margin: 18.8rem auto 0 auto;
+    }
+    .about_content {
+      width: 100%;
+      margin: 4rem auto 0 auto;
+      padding-right: 10vw;
+      .page-names {
+        margin: 0;
+      }
+    }
+  }
+  @include DESKTOP {
+    padding: 0 7.25rem;
+    .section-hero {
+      margin: 21rem auto 0 auto;
+      padding-bottom: 10rem;
+    }
+
+    .about_content {
+      width: 100%;
+      margin: 1rem auto 0 auto;
+      // padding-right: 10vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 10rem;
+      overflow: hidden;
+
+      .page-names {
+        width: 18rem;
+        font-size: 3rem;
+        margin: 0;
+      }
+      .inner {
+        width: 42rem;
+      }
+    }
+  }
+}

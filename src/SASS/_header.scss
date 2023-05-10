@@ -2,12 +2,9 @@
 header {
   // mobile screen
   width: 100vw;
-  padding: 0 1.25rem;
-  // padding-top: 2.75rem;
-  // padding-left: 1.25rem;
-  // padding-right: 1.25rem;
+  height: 80px;
+  // padding: 0 1.25rem;
   margin: auto;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -17,13 +14,20 @@ header {
   background-color: var(--primaryBG);
 
   .nav_container {
-    width: 100%;
-    margin: 2.75rem auto 0 auto;
+    margin: 1.5rem 1.25rem;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
+    @include breakpoint(600px) {
+      margin: 2.125rem 2.25rem;
+    }
+    @include DESKTOP {
+      margin: 1.125rem 7.5rem;
+    }
     .logo {
       width: 32px;
       height: 32px;
@@ -33,6 +37,83 @@ header {
         width: 100%;
         border: 0px;
         object-fit: cover;
+      }
+    }
+
+    .hamburger {
+      position: relative;
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      z-index: 11;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 16px;
+        height: 2px;
+        background-color: var(--primaryTX);
+        display: inline-block;
+        transition: all 0.2s;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          height: 2px;
+          width: 22px;
+          left: -6px;
+          background-color: var(--primaryTX);
+          transform: translateY(-7px) rotate(0deg);
+
+          transition: all 0.2s;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          height: 2px;
+          width: 25px;
+          left: -9px;
+          background-color: var(--primaryTX);
+          transform: translateY(7px) rotate(0deg);
+          transition: all 0.2s;
+        }
+      }
+
+      &.spin span {
+        height: 0;
+      }
+
+      &.spin span::before {
+        width: 24px;
+        left: -8px;
+        transform: translateY(0px) rotate(-225deg);
+        transition: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      &.spin span::after {
+        width: 24px;
+        left: -8px;
+        transform: translateY(0px) rotate(225deg);
+        transition: rotate 1s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+      &.spin:hover {
+        cursor: pointer;
+      }
+      &.spin:hover span::after,
+      &.spin:hover span::before {
+        background-color: var(--overlineTXorAcent);
+        transition: all 1s;
+      }
+
+      &:hover span,
+      &:hover span::before,
+      &:hover span::after {
+        cursor: pointer;
+        background-color: var(--overlineTXorAcent);
       }
     }
 
@@ -83,57 +164,11 @@ header {
 
     .email {
       font-weight: 700;
-    }
-
-    .hamburger {
-      display: flex;
-      justify-content: flex-end;
-      width: 1.5rem;
-      height: 1.5rem;
-      position: relative;
-      cursor: pointer;
-      transition: all 0.3s;
-      z-index: 10;
-
-      span {
-        height: 2px;
-        width: 16px;
-        background-color: var(--lineOrBars);
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        transition: all 0.2s;
-
-        &::before {
-          content: " ";
-          position: absolute;
-          display: inline-block;
-          height: 2px;
-          width: 22px;
-          left: -6px;
-          background-color: var(--lineOrBars);
-          transform: translateY(-6px);
-          transition: all 0.2s;
-        }
-
-        &::after {
-          content: " ";
-          position: absolute;
-          display: inline-block;
-          height: 2px;
-          width: 27px;
-          left: -11px;
-          background-color: var(--lineOrBars);
-          transform: translateY(6px);
-          transition: all 0.2s;
-        }
-      }
-
-      &:hover span,
-      &:hover span::before,
-      &:hover span::after {
+      transition: color 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      &:hover {
         cursor: pointer;
-        background-color: var(--overlineTXorAcent);
+        color: var(--overlineTXorAcent);
+        transition: color 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       }
     }
   }
@@ -142,42 +177,33 @@ header {
 .mobileNavView {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  // padding: 0 1.25rem;
-  // margin: 1.25rem;
-  top: -100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   left: 0;
   z-index: 11;
   background-color: var(--primaryBG);
   color: var(--primaryTX);
-
-  // transition: all 1.4s cubic-bezier(0.53, -0.54, 0.4, 1.39);
-  // transition: all 1s cubic-bezier(0.39, -0.48, 0.74, 1.27);
   transition: all 2s cubic-bezier(0.33, -0.27, 0.12, 1.28);
 
-  .mobileMenuBar {
-    // margin: 2.75rem 0 0 0;
+  .nav_mobile {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 100vw;
+    height: calc(100vh - 5rem);
+    background-color: var(--primaryBG);
+    color: var(--primaryTX);
+    transition: all 2s cubic-bezier(0.33, -0.27, 0.12, 1.28);
 
-    padding: 2.75rem 1.25rem 0 1.25rem;
-    border-bottom: 2px solid #dcdcdc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    background-color: #e8e7e6;
-
-    .logo {
-      width: 32px;
-      height: 32px;
-      border: 0px;
-
-      img {
-        width: 100%;
-        border: 0px;
-        object-fit: cover;
-      }
+    & .footer_container {
+      position: absolute;
+      left: 0px;
+      bottom: 0;
     }
   }
+
   .LinkStag {
     overflow: hidden;
     position: relative;
@@ -188,7 +214,7 @@ header {
 
   .nav_mobile .links ul {
     position: relative;
-    top: 5rem;
+    top: 3rem;
     width: 100%;
     height: 100%;
     display: flex;
@@ -200,23 +226,19 @@ header {
     li {
       list-style: none;
 
-      a,
-      p {
-        text-decoration: none;
-        list-style-type: none;
-        font-size: 2rem;
-        font-weight: 700;
-        color: var(--primaryTX);
-      }
+      // a,
+      // p {
+      //   text-decoration: none;
+      //   list-style-type: none;
+      //   font-size: 2rem;
+      //   font-weight: 800;
+      //   color: var(--primaryTX);
+      // }
 
-      &:hover a,
-      &:hover p {
-        color: var(--overlineTXorAcent);
-      }
+      // &:hover a,
+      // &:hover p {
+      //   color: var(--overlineTXorAcent);
+      // }
     }
-  }
-
-  .footer_container {
-    align-self: flex-end;
   }
 }
