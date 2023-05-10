@@ -59,7 +59,7 @@ const NavigationBar = ({ width }) => {
             <div className="nav_container"  >
               <div className="logo" style={{ cursor: 'pointer' }} onClick={() => {
                 navigate("/")
-                bringInView("#home",)
+                bringInView("#home", 240)
               }} >
                 <img src='/assets/images/logo.svg' alt='logo' />
               </div>
@@ -146,7 +146,7 @@ const NavigationBar = ({ width }) => {
             <div ref={navBtnref} className="nav_container">
               <div className="logo" onClick={() => {
                 navigate("/")
-                bringInView("#home",)
+                bringInView("#home", 240)
               }}>
                 <img src='/assets/images/logo.svg' alt='logo' />
               </div>
