@@ -1,11 +1,12 @@
 import React, { useRef, createRef } from 'react'
-import { FaLinkedinIn, FaBehance, FaDribbble, FaInstagram } from "react-icons/fa";
+import { FaBehance, FaDribbble, FaInstagram } from "react-icons/fa";
+import { GrLinkedinOption } from "react-icons/gr";
 import Hoverbutton from './Hoverbutton';
 
 
 const social = [
   {
-    name: "FaLinkedinIn",
+    name: "GrLinkedinOption",
     url: "https://www.linkedin.com/in/mdashiqdesigner/"
   },
   {
