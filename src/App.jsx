@@ -11,8 +11,9 @@ import CaseDetails from './pages/Details';
 import { AboutMe } from './pages/AboutMe';
 import { AppData } from './ContextAPI';
 import NavigationBar from './components/NavigationBar';
-import useNavScrollController from './hooks/useNavScrollController';
+
 import useResize from './hooks/useResize';
+
 
 
 (
@@ -53,7 +54,7 @@ import useResize from './hooks/useResize';
 )();
 
 function App() {
-  const { Loading, Progress } = AppData()
+  const { Loading } = AppData()
   let width = useResize()
 
   return (
@@ -66,7 +67,6 @@ function App() {
           <Route path='/' index element={<Home />} />
           <Route path='/details/:id' element={<CaseDetails />} />
           <Route path='/about' element={<AboutMe />} />
-          // <Route path='/public/assets/resume.pdf' />
         </Routes>
       </div>
   )
@@ -74,20 +74,11 @@ function App() {
 
 function Load({ children }) {
 
-
-
-
   return (
-    <div>
-      <h1
-        style={{
-          position: 'absolute',
-          top: "50%",
-          left: "50%",
-          transform: "translateX( -50%)",
-          transition: "all 1s easeIn"
-        }}>🌀 Loading...</h1>
-      {children}
+    <div className="load">
+      <span className='loader'>
+        {children}
+      </span>
     </div>
   )
 }
