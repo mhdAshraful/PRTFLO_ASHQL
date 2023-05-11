@@ -428,6 +428,19 @@ main {
             }
           }
         }
+        .note {
+          margin: 0.5rem;
+          padding: 0.5rem;
+          // border: 0;
+          border-radius: 0.4rem;
+          // font-family: "Outfit", sans-serif;
+          font-size: 1.3rem;
+
+          top: 40%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
       }
     }
   }
@@ -837,23 +850,46 @@ main {
   └─────────────────────────────────────────────────────────────────────────┘
  */
 .details_wrapper {
-  margin: 6.26rem auto 0 auto;
-  h1 {
-    font: 600 1.74rem/1 "Clash Display", sans-serif;
-    text-align: center;
+  // margin: 6.26rem auto 0 auto;
+  .backbtn {
+    position: absolute;
+    top: 90px;
+    left: 20px;
   }
-  p {
-    font: 400 0.875rem/1 "Outfit", sans-serif;
+
+  .top_info {
+    margin: 12rem 2.25rem 5rem 2.25rem;
     text-align: center;
-    color: var(--textGray);
+    h1 {
+      font: 600 1.74rem/34px "Clash Display", sans-serif;
+      padding-bottom: 1rem;
+    }
+    p {
+      font: 300 0.875rem/150% "Outfit", sans-serif;
+
+      color: var(--textGray);
+    }
   }
   .imgwrapper {
-    width: 100vw;
+    width: 100%;
     margin: 0;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+  }
+
+  @include TABLET {
+    padding: 0 2.25rem 2.25rem 2.25rem;
+    .top_info {
+      margin: 13rem 7.8rem 7.5rem 7.8rem;
+    }
+  }
+  @include DESKTOP {
+    padding: 0 7.25rem 7.25rem 7.25rem;
+    .top_info {
+      margin: 13rem 15rem 7.5rem 15rem;
     }
   }
 }
@@ -888,6 +924,7 @@ main {
     a {
       text-decoration: none;
       font: 600 1rem/20px "Clash Display", sans-serif;
+      color: var(--primaryTX);
       &:active {
         text-decoration: none;
       }
@@ -1036,12 +1073,10 @@ main {
     }
     .social_media {
       width: 40%;
-      // margin: 1rem 2.25rem;
       margin: 0;
       padding: 1rem 2.25rem;
       align-self: flex-end;
       justify-content: end;
-      // background-color: white;
 
       .icons {
         width: 2.625rem;
@@ -1052,8 +1087,42 @@ main {
   }
 
   @include DESKTOP {
+    display: flex;
+    // padding: 0 2.25rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     .email_me {
+      margin: auto 2.25rem;
+      width: 60%;
       font: 600 1.25rem/25px "Clash Display", sans-serif;
+      align-self: flex-start;
+      justify-content: flex-start;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        font: 600 1rem/20px "Clash Display", sans-serif;
+        &:active {
+          text-decoration: none;
+        }
+        &:visited {
+          text-decoration: none;
+        }
+      }
+    }
+    .social_media {
+      width: 40%;
+      margin: 0;
+      padding: 1rem 2.25rem;
+      align-self: flex-end;
+      justify-content: end;
+
+      .icons {
+        width: 3.75rem;
+        height: 3.75rem;
+        border: 1px solid var(--primaryTX);
+      }
     }
   }
 }

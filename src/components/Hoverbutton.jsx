@@ -62,6 +62,7 @@ function Hoverbutton({ name, activeSection, btn_id }) {
           stagger: { amount: 0.3 },
         }
       )
+
     // && gsap.to(btnref.current,
     //   {
     //     left: "100%",
@@ -72,7 +73,7 @@ function Hoverbutton({ name, activeSection, btn_id }) {
 
 
 
-  }, [isHovered, width])
+  }, [isHovered])
 
 
 

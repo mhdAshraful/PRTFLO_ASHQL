@@ -29,7 +29,7 @@ export const Mailto = ({ email, subject = '', body = '', children }) => {
   if (subject) params += `subject=${encodeURIComponent(subject)}`;
   if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
 
-  return <a href={`mailto:${email}${params}`}>{children}</a>;
+  return <a className='email' href={`mailto:${email}${params}`}>{children}</a>;
 };
 
 

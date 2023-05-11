@@ -215,7 +215,7 @@ const NavigationBar = ({ width }) => {
 
                 </div>
               </div>
-              <Mailto className="email" email="mdashiquli4@gmail.com" subject='New Design Project!!' body='Hi, Ashiq, I would like to discuss about my next Interesting Project. Please contact me with the details below, and here is an overview of the project:'>
+              <Mailto email="mdashiquli4@gmail.com" subject='New Design Project!!' body='Hi, Ashiq, I would like to discuss about my next Interesting Project. Please contact me with the details below, and here is an overview of the project:'>
                 Let's Talk
               </Mailto>
               {/* <div className="email">Let's Talk</div> */}

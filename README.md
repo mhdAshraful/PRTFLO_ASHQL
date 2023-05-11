@@ -1,14 +1,14 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=300px height=200px src="https://media.tenor.com/DBS00qyMl3AAAAAM/bug-developer.gif"  alt="Project logo"></a>
+ <img width=300px height=200px src="/git.gif"  alt="Project logo"></a>
 </p>
 
 <h3 align="center">portfolio-ashiqul-islam</h3>
 
 -------
 -------
-<p align="center"> Personal Portfolio developed for a Product Designer. Project was to designed by the client and I tried to make it interactive with webgl and r3f, a populer renderer for three.js in react application. 
-    <br> 
+<p align="center"> Personal Portfolio developed for a Product Designer. Project was to designed by the client and I tried to make it interactive with webgl and r3f, a populer renderer for three.js in react application.
+    <br>
 </p>
 
 ## 📝 Table of Contents
@@ -25,7 +25,7 @@ The objective of this project is to design and develop a high-quality, professio
 ## *THIS IS NOT AN OPEN SOURCE PROJECT*
 
 ### Prerequisites
-To install and test a version you can simply install all packages by using 
+To install and test a version you can simply install all packages by using
 
 depending on node and npm verion run
 ```
@@ -37,7 +37,7 @@ npm install --legacy-peer-deps
 
 A step by step series of examples that tell you how to get a development env running.
 
-simply run 
+simply run
 ```
 npm run dev     // development mode
 npm run build   // production build
