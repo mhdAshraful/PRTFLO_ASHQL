@@ -51,7 +51,7 @@ const NavigationBar = ({ width }) => {
       backdropFilter: navColr ? "blur(4px)" : "none",
       // filter: navColr ? "blur(2px)" : "none",
       borderBottom: navColr ? "1px solid hsla(213, 5%, 58%, 0.4)" : "none",
-      transition: "all 1.4s"
+      transition: "background-color 1.4s ease"
     }}>
       {
         width <= 1199 ?
