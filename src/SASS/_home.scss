@@ -854,7 +854,12 @@ main {
   .backbtn {
     position: absolute;
     top: 90px;
-    left: 20px;
+    left: 1.25rem;
+    width: 32px;
+    height: 32px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .top_info {
@@ -866,7 +871,6 @@ main {
     }
     p {
       font: 300 0.875rem/150% "Outfit", sans-serif;
-
       color: var(--textGray);
     }
   }
@@ -882,14 +886,35 @@ main {
 
   @include TABLET {
     padding: 0 2.25rem 2.25rem 2.25rem;
+    .backbtn {
+      left: 2.25rem;
+    }
     .top_info {
-      margin: 13rem 7.8rem 7.5rem 7.8rem;
+      margin: 13rem 3rem 7.5rem 3rem;
+      h1 {
+        font: 600 3rem "Clash Display", sans-serif;
+        padding-bottom: 1rem;
+      }
+      p {
+        font: 300 1.5rem/150% "Outfit", sans-serif;
+      }
     }
   }
   @include DESKTOP {
     padding: 0 7.25rem 7.25rem 7.25rem;
+    .backbtn {
+      top: 10rem;
+      left: 7.25rem;
+    }
     .top_info {
-      margin: 13rem 15rem 7.5rem 15rem;
+      margin: 13rem 11rem 7.5rem 11rem;
+      h1 {
+        font: 600 4.5rem/34px "Clash Display", sans-serif;
+        padding-bottom: 1.3rem;
+      }
+      p {
+        font: 300 1.5rem/150% "Outfit", sans-serif;
+      }
     }
   }
 }

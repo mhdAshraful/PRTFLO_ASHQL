@@ -31,16 +31,16 @@ const RecentWorks = () => {
   const [subject, setSubject] = useState(web)
 
   const changeItems = (items) => {
-    console.log(items);
+    // console.log(items);
     if (items === "app") {
       setSubject(app);
-      console.log("changed", subject);
+      // console.log("changed", subject);
     } else if (items === "dash") {
       setSubject(dash);
-      console.log("changed", subject);
+      // console.log("changed", subject);
     } else if (items === "web") {
       setSubject(web)
-      console.log("changed", subject);
+      // console.log("changed", subject);
     }
   }
 

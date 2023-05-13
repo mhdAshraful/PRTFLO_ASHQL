@@ -11,7 +11,7 @@ const Details = () => {
   const navigate = useNavigate()
   let selected = data.filter((item) => item.id === Number(id));
   let item = selected[0];
-  console.log('item', selected[0]);
+  // console.log('item', selected[0]);
 
   return (
     <main className="main_content_container">

@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
+  transition: all 1.2s ease("expo.inOut");
 
   .btn {
     position: relative;

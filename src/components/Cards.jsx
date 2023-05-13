@@ -49,10 +49,10 @@ const Cards = ({ subject }) => {
   function paginate(direction) {
     if (direction === "Forward" && containerRef.current) {
       x.set(position - containerWidth);
-      console.log("position", position);
+      // console.log("position", position);
     } else if (direction === "Backward") {
       x.set(position + containerWidth);
-      console.log("position", position);
+      // console.log("position", position);
     }
   }
 
