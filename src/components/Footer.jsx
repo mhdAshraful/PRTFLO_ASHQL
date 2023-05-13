@@ -19,7 +19,7 @@ const social = [
   },
   {
     name: "FaInstagram",
-    url: "https://www.behance.net/mdashiq_designer"
+    url: "https://www.instagram.com/mdashiq_designer/"
   }
 ]
 
@@ -87,7 +87,7 @@ const Footer = () => {
           id="FaInstagram"
           alt="FaInstagram"
           className='icons'
-          onClick={() => window.open("https://www.behance.net/mdashiq_designer", '_blank')}
+          onClick={() => window.open("https://www.instagram.com/mdashiq_designer/", '_blank')}
         >
           <FaInstagram />
         </div>
