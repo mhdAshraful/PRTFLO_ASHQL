@@ -39,11 +39,6 @@ export const Mailto = ({ email, subject = '', body = '', children }) => {
 const Footer = () => {
 
 
-
-
-
-
-
   return (
     <div className="footer_container">
       <div className="email_me">

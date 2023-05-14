@@ -10,6 +10,7 @@ const Cards = ({ subject }) => {
   let totalCardItems = subject.length
   const navigate = useNavigate();
 
+  const [cardwidth, setCardWidth] = useState(0)
   const [containerWidth, setContainerWidth] = useState(0)
   const [containerScrollWidth, setContainerScrollWidth] = useState(0)
   // const [containerContraints, setContainerConstraints] = useState(0)
@@ -23,7 +24,10 @@ const Cards = ({ subject }) => {
   useEffect(() => {
     x.set(position);
     // may need to change
-    const unsubX = x.on("change", (latest) => setPosiiton(latest))
+    const unsubX = x.on("change", (latest) => {
+      console.log("new position value", latest);
+      setPosiiton(latest)
+    })
     return () => unsubX
   }, [x, position])
 
@@ -37,21 +41,31 @@ const Cards = ({ subject }) => {
       if (sliderContainerRef) {
         let _containerWidth = sliderContainerRef.clientWidth;
         let _containerScrollWidth = sliderContainerRef.scrollWidth;
+        let _cardWidth = cardCurrentRef.clientWidth;
         setContainerWidth(_containerWidth);
         setContainerScrollWidth(_containerScrollWidth);
+        setCardWidth(_cardWidth);
         // setContainerConstraints(_containerScrollWidth - _containerWidth);
+
       }
     }
     updateSliderContainerValues();
 
   }, [deviceWidth]);
 
+  console.log("card", cardwidth)
+  console.log("container", containerScrollWidth)
+  console.log("position", position)
+  console.log("value", ((containerScrollWidth - cardwidth * totalCardItems) / totalCardItems))
+
   function paginate(direction) {
     if (direction === "Forward" && containerRef.current) {
-      x.set(position - containerWidth);
+      // x.set(position - containerWidth);
+      x.set(position - (1 * cardwidth + ((containerScrollWidth - cardwidth * totalCardItems) / totalCardItems)));
       // console.log("position", position);
     } else if (direction === "Backward") {
-      x.set(position + containerWidth);
+      // x.set(position + containerWidth);
+      x.set(position + (1 * cardwidth + ((containerScrollWidth - cardwidth * totalCardItems) / totalCardItems)));
       // console.log("position", position);
     }
   }
@@ -129,7 +143,8 @@ const Cards = ({ subject }) => {
 
         <IconContext.Provider
           value={{
-            color: `${position <= -containerScrollWidth + containerWidth ? "gray" : "black"}`,
+            // color: `${position <= -containerScrollWidth + containerWidth ? "gray" : "black"}`,
+            color: `${position <= -containerScrollWidth - (1 * cardwidth + ((containerScrollWidth - cardwidth * totalCardItems) / totalCardItems)) ? "gray" : "black"}`,
             className: "global-class-name"
           }}>
           <HiOutlineArrowRight

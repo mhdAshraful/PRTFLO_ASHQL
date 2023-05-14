@@ -50,7 +50,7 @@ const NavigationBar = ({ width }) => {
       WebkitBackdropFilter: navColr ? "blur(4px)" : "none",
       backdropFilter: navColr ? "blur(4px)" : "none",
       // filter: navColr ? "blur(2px)" : "none",
-      borderBottom: navColr ? "1px solid hsla(213, 5%, 58%, 0.4)" : "none",
+      borderBottom: navColr ? "1px solid hsla(30, 4%, 91%, 1)" : "none",
       transition: "background-color 1.4s ease"
     }}>
       {

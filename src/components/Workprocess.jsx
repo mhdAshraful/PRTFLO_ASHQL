@@ -25,15 +25,15 @@ const Workprocess = () => {
     gsap.to("circle.reserch",
       {
         fill: res ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "ease.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.reserch",
       {
         fill: res ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
 
@@ -42,15 +42,15 @@ const Workprocess = () => {
     gsap.to("circle.journey",
       {
         fill: jur ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.journey",
       {
         fill: jur ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
 
@@ -58,60 +58,60 @@ const Workprocess = () => {
     gsap.to("circle.wireframe",
       {
         fill: wir ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.wireframe",
       {
         fill: wir ? "#F5F3F2" : "#F5F3F2",
         stroke: wir ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
 
     gsap.to("circle.usability",
       {
         fill: usa ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.usability",
       {
         fill: usa ? "#F5F3F2" : "#F5F3F2",
         stroke: usa ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("circle.ui",
       {
         fill: UI ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.ui",
       {
         fill: UI ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("circle.dev",
       {
         fill: deve ? "#f5f3f2ea" : "#FFEAE2",
-        duration: 1,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
     gsap.to("path.dev",
       {
         fill: deve ? "#FF4E10" : "#000",
-        duration: 0.8,
-        ease: "espo.in",
+        duration: 0.2,
+        ease: "expo.inOut",
 
       })
 
@@ -123,7 +123,7 @@ const Workprocess = () => {
 
   return (
     <>
-      <div data-section id='work_process' className="section-workprocess sections">
+      <div data-section id='work_process' className="section-workprocess section">
 
         <h1 className="page-names">Work Process</h1>
 

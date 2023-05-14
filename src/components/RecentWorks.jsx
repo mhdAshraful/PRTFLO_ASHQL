@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 import { AppData } from '../ContextAPI'
 import useResize from '../hooks/useResize';
 
-// import Cards from "./CardsCopy";
-import Cards from "./Cards";
+import Cards from "./SwipeCard.jsx";
+// import Cards from "./Cards";
 // import CaseStudy from "./CaseStudy copy 2";
 
 const RecentWorks = () => {

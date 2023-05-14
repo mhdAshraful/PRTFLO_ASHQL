@@ -24,11 +24,17 @@ main {
   }
 
   h1.page-names {
-    font-size: var(--h1-font-size-min);
+    font-size: 2rem;
     font-weight: 600;
     text-align: left;
     padding-bottom: 1.125rem;
     border-bottom: 2px solid var(--primaryTX);
+    @include TABLET {
+      font-size: 2.5rem;
+    }
+    @include DESKTOP {
+      font-size: 3.25rem;
+    }
   }
 }
 
@@ -302,30 +308,44 @@ main {
           margin: 1rem 0 0.5rem 0;
           font-size: 0.875rem;
           text-align: left;
+          @include DESKTOP {
+            font-size: 1.125rem;
+          }
         }
       }
       .title {
         text-align: left;
         font: 600 1.125rem/1 "Clash Display", sans-serif;
-        // font-family: "Clash Display", sans-serif;
-        // font-size: 1.125rem;
-        // font-weight: 600;
         letter-spacing: 1px;
         margin: 0rem auto 0.5rem auto;
+        @include TABLET {
+          font: 600 1.25rem/1 "Clash Display", sans-serif;
+          letter-spacing: 2px;
+        }
+        @include DESKTOP {
+          font: 600 1.5rem/1 "Clash Display", sans-serif;
+          letter-spacing: 2px;
+          margin: 0rem auto 1.25rem auto;
+        }
       }
       .disBTN {
-        font: 600 1.125rem/1.125 "Outfit", sans-serif;
+        font: 600 0.875rem/1.125 "Outfit", sans-serif;
         color: var(--textGray);
         text-align: left;
         text-transform: uppercase;
         margin-top: 1rem;
         // cursor: pointer;
+        // @include TABLET{ font: 600 0.875rem/1.125 "Outfit", sans-serif; }
+        @include DESKTOP {
+          font: 600 1rem/1.125 "Outfit", sans-serif;
+        }
       }
     }
   }
 
   @include breakpoint(600px) {
     padding: 0 2.25rem;
+    margin: 2.5rem auto;
 
     .card_container {
       display: flex;
@@ -397,6 +417,7 @@ main {
   }
   @include DESKTOP {
     padding: 0 7.25rem;
+    margin: 10rem auto;
 
     .card_container {
       padding: 0 7.25rem;
@@ -526,26 +547,27 @@ main {
 
   @include breakpoint(600px) {
     padding: 0 2.25rem;
+    margin: 2.5rem auto;
     .info-wrap {
-      width: 90%;
+      width: 85%;
     }
   }
 
   @include TABLET {
     padding: 0 2.25rem;
+    margin: 5rem auto;
 
     .workList-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      grid-column-gap: 34px;
-      grid-row-gap: 032px;
-
+      grid-column-gap: 2.2vw;
+      grid-row-gap: 5.3vw;
       .list_item {
         .info-wrap {
-          width: 90%;
+          width: 85%;
           .heading {
-            font: 600 1.125rem/25px "Clash Display", sans-serif;
+            font: 600 1.25rem/25px "Clash Display", sans-serif;
           }
         }
 
@@ -560,13 +582,13 @@ main {
   }
   @include DESKTOP {
     padding: 0 7.25rem;
-
+    margin: 10rem auto;
     .workList-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      grid-column-gap: 10vw;
-      grid-row-gap: 84px;
+      grid-column-gap: 5.5vw;
+      grid-row-gap: 5.3vw;
 
       .list_item {
         .info-wrap {
@@ -604,9 +626,11 @@ main {
 
   @include breakpoint(600px) {
     padding: 0 2.25rem;
+    margin: 2.25rem auto;
   }
   @include DESKTOP {
     padding: 0 7.25rem;
+    margin: 10rem auto 2rem auto;
   }
   .page-names {
     align-self: flex-start;
@@ -639,6 +663,11 @@ main {
         // top right
         padding: 0.7rem 0.7rem;
         width: max-content;
+        font: 300 14px "Outfit", sans-serif;
+        @include DESKTOP {
+          font: 300 18px "Outfit", sans-serif;
+        }
+
         // margin: auto;
         // transition: 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
       }
@@ -802,6 +831,15 @@ main {
             font: 600 1.125rem/1 "Clash Display", sans-serif;
             letter-spacing: 1px;
             text-align: left;
+            @include TABLET {
+              font: 600 1.25rem/1 "Clash Display", sans-serif;
+              letter-spacing: 2px;
+            }
+            @include DESKTOP {
+              font: 600 1.5rem/1 "Clash Display", sans-serif;
+              letter-spacing: 2px;
+              margin: 0rem auto 1.25rem auto;
+            }
           }
           .detailsBTN {
             font-family: "Outfit", sans-serif;
@@ -811,32 +849,38 @@ main {
             text-transform: uppercase;
             margin-top: 1rem;
             cursor: pointer;
+            @include DESKTOP {
+              font: 600 1rem/1.125 "Outfit", sans-serif;
+            }
           }
         }
       }
+
       .arrows {
-        position: relative;
+        position: absolute;
+        z-index: 11;
         width: 7rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
         height: auto;
+        bottom: 0px;
 
         svg {
-          height: 3rem;
-          width: 3rem;
-          padding: 0.8rem;
+          height: 2rem;
+          width: 2rem;
+          padding: 0.2rem;
         }
 
         @include TABLET {
           position: absolute;
-          top: -110px;
+          top: -145%;
           right: 0;
         }
         @include DESKTOP {
           position: absolute;
-          top: -110px;
+          top: -125%;
           right: 0;
         }
       }
