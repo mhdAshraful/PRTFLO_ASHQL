@@ -40,7 +40,7 @@ const Cards = ({ subject }) => {
     <div className="cardContainer">
       <Swiper
         spaceBetween={36}
-        slidesPerView={width < 768 ? 1 : 3}
+        slidesPerView={width < 768 ? 1 : width < 1400 ? 2 : 3}
         onSlideChange={(swiper) => {
           console.log('slide change')
           swiper.activeIndex === 0 ? setFirst(true) : setFirst(false);
